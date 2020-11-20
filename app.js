@@ -22,7 +22,10 @@ var seedDB = require('./seeds');
 
 var flash = require('connect-flash');
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb+srv://MansiSaxena:Qwerty12@cluster0.7bulo.mongodb.net/YelpDB?retryWrites=true&w=majority",{
+    useUnifiedTopology:true,
+    useNewUrlParser:true
+});
 
 
 app.use(bodyparser.urlencoded({extended: true})); // To initialize bodyparser
@@ -59,7 +62,7 @@ app.use(function (req, res, next) {
 // compiling the schema into a model
 // Campground.create(
 //     {
-//         name: "Sanket Singh",
+//         name: "Mansi Saxena",
 //         image: "http://s3.amazonaws.com/digitaltrends-uploads-prod/2017/06/camping-tent-1500x1000.png",
 //         description: "This is a huge Granite hill, no Bathrooms, no water. Beautiful Granite!"
 //     }, function (err, campground) {
@@ -75,5 +78,5 @@ app.use(indexRoutes);
 app.use(commentRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.listen(3000, function () {
-    console.log("Yelp Camp Server Has Started");
+    console.log("You Camp Server Has Started on 3000");
 });

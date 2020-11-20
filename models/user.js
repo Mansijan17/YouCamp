@@ -7,3 +7,5 @@ var userSchema = new mongoose.Schema({
 });
 userSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User",userSchema);
+
+// AIzaSyAke5zkBjujyiMnszXdC31igw7mNTaFQ8Y google_api_key
