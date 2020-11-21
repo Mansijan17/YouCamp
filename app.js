@@ -31,8 +31,8 @@ mongoose.connect("mongodb+srv://MansiSaxena:Qwerty12@cluster0.7bulo.mongodb.net/
 app.use(bodyparser.urlencoded({extended: true})); // To initialize bodyparser
 
 app.set("view engine", "ejs"); // To set the default html embedded enjine to ejs
-
-app.use(express.static(__dirname + "/public"));
+const path=require("path")
+app.use(express.static(path.join(__dirname,"/public")));
 app.use(methodOverride("_method"));
 app.use(flash());
 
